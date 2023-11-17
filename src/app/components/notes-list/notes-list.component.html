@@ -1,9 +1,10 @@
-<form (submit)="onSave()">
+<form (submit)="onSave()" #noteForm="ngForm">
     <label for="Title">Title</label>
-    <input type="text" name="title" id="Title" [(ngModel)]="title">
-    <button type="submit">
+    <input type="text" name="title" id="Title" [formControl]="title" required>
+    <button type="submit" [disabled]="!noteForm.form.valid">
         Add Note
     </button>
+    {{ title.value }}
 </form>
 
 <ul *ngFor="let note of notes;">
