@@ -1,3 +1,11 @@
+<form (submit)="onSave()">
+    <label for="Title">Title</label>
+    <input type="text" name="title" id="Title" [(ngModel)]="title">
+    <button type="submit">
+        Add Note
+    </button>
+</form>
+
 <ul *ngFor="let note of notes;">
     <app-note [title]="note.title" [text]="note.text"/>
 </ul>
