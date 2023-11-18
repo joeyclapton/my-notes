@@ -3,19 +3,23 @@ import { CommonModule } from '@angular/common';
 import { NoteComponent } from '../note/note.component';
 import { NoteService } from '../../services/note/note.service';
 import { Note } from '../../interface/note.interface';
-import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormControl,  FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-notes-list',
   standalone: true,
-  imports: [CommonModule, NoteComponent, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, NoteComponent, ReactiveFormsModule],
   templateUrl: './notes-list.component.html',
   styleUrl: './notes-list.component.sass'
 })
 export class NotesListComponent implements OnInit {
+
  noteService = inject(NoteService)
  notes: Note[] = []
- title = new FormControl('')
+ formNotes = new FormGroup({
+  title: new FormControl(''),
+  description: new FormControl('')
+ })
 
  constructor() {}
  
@@ -25,6 +29,6 @@ export class NotesListComponent implements OnInit {
  }
 
  onSave() {
-    console.log(this.title)
+    console.log(this.formNotes)
  }
 }
