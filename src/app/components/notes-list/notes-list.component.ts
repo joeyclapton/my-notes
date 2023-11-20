@@ -22,6 +22,7 @@ export class NotesListComponent implements OnInit {
   notes: Note[] = [];
   formNotes = new FormGroup({
     title: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required),
   });
 
   constructor() {}
@@ -31,6 +32,15 @@ export class NotesListComponent implements OnInit {
   }
 
   onSave() {
-    if (this.formNotes.valid) console.log(this.formNotes.value.title);
+    if (this.formNotes.valid) {
+      const { title, description } = this.formNotes.value;
+      const note = {
+        id: 0,
+        title: title as string,
+        description: description as string,
+      };
+      this.noteService.create(note);
+      this.notes = this.noteService.getAll();
+    }
   }
 }

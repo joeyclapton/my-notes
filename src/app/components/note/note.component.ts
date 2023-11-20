@@ -6,9 +6,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './note.component.html',
-  styleUrl: './note.component.sass'
+  styleUrl: './note.component.sass',
 })
 export class NoteComponent {
   @Input() title: string = '';
-  @Input() text: string = '';
+  @Input() description: string = '';
 }

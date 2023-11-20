@@ -1,10 +1,18 @@
 <form (ngSubmit)="onSave()" [formGroup]="formNotes">
+  <h2>Nova nota 📝</h2>
   <label for="Title">Title</label>
-  <input type="text" name="title" id="Title" formControlName="title" required />
-  <button type="submit">Add Note</button>
-  {{ formNotes.value.title }}
+  <input type="text" name="title" id="Title" formControlName="title" />
+  <label for="Description">Description</label>
+  <input
+    type="text"
+    name="description"
+    id="Description"
+    formControlName="description"
+  />
+  <button (click)="formNotes.reset()">Clear</button>
+  <button type="submit" [disabled]="!formNotes.valid">Add Note</button>
 </form>
 
 <ul *ngFor="let note of notes">
-  <app-note [title]="note.title" [text]="note.text" />
+  <app-note [title]="note.title" [description]="note.description" />
 </ul>
