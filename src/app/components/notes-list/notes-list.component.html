@@ -1,11 +1,10 @@
-<form (submit)="onSave()" [formGroup]="formNotes">
-    <label for="Title">Title</label>
-    <input type="text" name="title" id="Title" formControlName="title" required>
-    <button type="submit">
-        Add Note
-    </button>
+<form (ngSubmit)="onSave()" [formGroup]="formNotes">
+  <label for="Title">Title</label>
+  <input type="text" name="title" id="Title" formControlName="title" required />
+  <button type="submit">Add Note</button>
+  {{ formNotes.value.title }}
 </form>
 
-<ul *ngFor="let note of notes;">
-    <app-note [title]="note.title" [text]="note.text" />
+<ul *ngFor="let note of notes">
+  <app-note [title]="note.title" [text]="note.text" />
 </ul>
