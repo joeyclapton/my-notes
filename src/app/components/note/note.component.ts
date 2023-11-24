@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './note.component.sass',
 })
 export class NoteComponent {
-  @Input() id: string = '';
+  @Input() id: string | number = '';
   @Input() title: string = '';
   @Input() description: string = '';
 }

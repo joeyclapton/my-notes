@@ -38,4 +38,8 @@ export class NoteService {
       },
     ];
   }
+
+  findById(id: number): Note | undefined {
+    return this.notes.find((note) => note.id === id);
+  }
 }

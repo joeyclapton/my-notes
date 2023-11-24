@@ -1,7 +1,7 @@
-<div id="note-container">
-  <span class="note-title">note.title</span>
-  <span class="note-id">ID: note.id</span>
-  <span class="note-text">note.text</span>
+<div id="note-container" *ngIf="id">
+  <span class="note-title">{{ note.id }}</span>
+  <span class="note-id">{{ note.title }}</span>
+  <span class="note-text">{{ note.description }}</span>
 </div>
 <nav>
   <button routerLink="">Back to List</button>

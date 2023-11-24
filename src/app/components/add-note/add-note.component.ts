@@ -28,6 +28,7 @@ export class AddNoteComponent {
   addNote() {
     if (this.form.valid) {
       this.noteService.create({
+        id: this.noteService.getAll().length + 1,
         title: this.form.value.title as string,
         description: this.form.value.description as string,
       });

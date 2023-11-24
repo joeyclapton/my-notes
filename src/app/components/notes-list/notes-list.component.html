@@ -1,7 +1,13 @@
-<section>
+<section *ngIf="notes.length">
   <ul *ngFor="let note of notes">
-    <app-note [title]="note.title" [description]="note.description" />
+    {{
+      note.id
+    }}
+    <app-note
+      [id]="note.id"
+      [title]="note.title"
+      [description]="note.description"
+    />
   </ul>
-
-  <button type="button" routerLink="/new">Create new note</button>
 </section>
+<button type="button" routerLink="/new">Create new note</button>
