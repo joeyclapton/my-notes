@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-add-note',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.sass'
+  templateUrl: './add-note.component.html',
+  styleUrl: './add-note.component.sass'
 })
-export class HomeComponent {
+export class AddNoteComponent {
 
 }

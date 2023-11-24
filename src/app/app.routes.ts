@@ -1,9 +1,12 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home/home.component';
-import { ContactComponent } from './pages/contact/contact/contact.component';
+import { NotesListComponent } from './components/notes-list/notes-list.component';
+import { AddNoteComponent } from './components/add-note/add-note.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'contact', component: ContactComponent },
+  {
+    path: '',
+    title: 'My Notes',
+    component: NotesListComponent,
+  },
+  { path: 'new', title: 'New Note', component: AddNoteComponent },
 ];

@@ -1,18 +1,7 @@
-<form (ngSubmit)="onSave()" [formGroup]="formNotes">
-  <h2>Nova nota 📝</h2>
-  <label for="Title">Title</label>
-  <input type="text" name="title" id="Title" formControlName="title" />
-  <label for="Description">Description</label>
-  <input
-    type="text"
-    name="description"
-    id="Description"
-    formControlName="description"
-  />
-  <button (click)="formNotes.reset()">Clear</button>
-  <button type="submit" [disabled]="!formNotes.valid">Add Note</button>
-</form>
+<section>
+  <ul *ngFor="let note of notes">
+    <app-note [title]="note.title" [description]="note.description" />
+  </ul>
 
-<ul *ngFor="let note of notes">
-  <app-note [title]="note.title" [description]="note.description" />
-</ul>
+  <button type="button" routerLink="/new">Create new note</button>
+</section>
