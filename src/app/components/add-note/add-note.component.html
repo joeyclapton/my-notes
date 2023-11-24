@@ -1,2 +1,17 @@
 <p>add-note works!</p>
-<button (click)="addNote()">Add</button>
+<form [formGroup]="form" (ngSubmit)="addNote()">
+  <div>
+    <label for="Title">Título</label>
+    <input type="text" name="title" id="Title" formControlName="title" />
+  </div>
+  <div>
+    <label for="Description">Descrição</label>
+    <input
+      type="text"
+      name="description"
+      id="Description"
+      formControlName="description"
+    />
+  </div>
+  <button type="submit" [disabled]="!form.valid">Add</button>
+</form>
