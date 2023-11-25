@@ -1,8 +1,5 @@
 <section *ngIf="notes.length">
   <ul *ngFor="let note of notes">
-    {{
-      note.id
-    }}
     <app-note
       [id]="note.id"
       [title]="note.title"
